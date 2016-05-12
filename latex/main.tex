@@ -1,0 +1,25 @@
+\documentclass[11pt]{extarticle}
+\usepackage[a4paper,margin=1.0in]{geometry}
+
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{float} % allow using of [H] tag on "figure"s
+\usepackage{color} % color text package
+
+
+\usepackage[backend=bibtex,sorting=none]{biblatex}
+\bibliography{cite_library.bib}
+
+
+\begin{document}
+%
+\input{sections/00_titlepage}
+\input{sections/01_content}
+\input{sections/02_content}
+\input{sections/03_content}
+\input{sections/04_content}
+%\include{sections/05_appendix}
+\newpage
+\printbibliography
+%
+\end{document}
