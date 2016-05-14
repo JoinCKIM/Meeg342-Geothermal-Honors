@@ -21,7 +21,7 @@ Engp = [];
 
 % Loop through
 for n = N
-    [T,Q] = calc_outlet_parallel(Q_flow, Tin, Tinf, d, t, L, n);
+    [T,Q] = calc_outlet(Q_flow, Tin, Tinf, d, t, L, n);
     Toutp(count) = T;
     Engp(count) = Q;
     count = count + 1;

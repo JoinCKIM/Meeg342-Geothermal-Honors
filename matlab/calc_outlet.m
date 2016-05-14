@@ -1,4 +1,4 @@
-function [Tout,Q] = calc_outlet_parallel(Q_flow, Tin, Tinf, d, t, L, N)
+function [Tout,Q] = calc_outlet(Q_flow, Tin, Tinf, d, t, L, N)
 
 e = 0.0015e-3; % todo use the passed value
 

@@ -20,10 +20,10 @@ Engp = [];
 
 % Loop through
 for q = Q_flow
-    [T,Q] = calc_outlet_series(q, Tin, Tinf, d, t, L);
+    [T,Q] = calc_outlet(q, Tin, Tinf, d, t, L, 1);
     Touts(count) = T;
     Engs(count) = Q;
-    [T,Q] = calc_outlet_parallel(q, Tin, Tinf, d, t, L, 1);
+    [T,Q] = calc_outlet(q, Tin, Tinf, d, t, L, 3);
     Toutp(count) = T;
     Engp(count) = Q;
     count = count + 1;
