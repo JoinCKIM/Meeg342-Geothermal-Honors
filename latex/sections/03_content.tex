@@ -37,16 +37,29 @@ When the flow is laminar a constant can be used to approximate what the Nusselt 
 %
 \begin{table}[H]
 \centering
-\begin{tabular}{lll}
-Type       & Thermal Conductivity (W/mk) & Density (kg/$m^3$) \\ \hline
+\begin{tabular}{ccc}
+Type       & Thermal Conductivity (W/mK) & Density (kg/$m^3$) \\ \hline
 HDPE Pipe  & 0.461-0.502                 & 947-955                          \\
 PVC Pipe   & 0.147-0.209                 & 1300-1490                        \\
-CPVC Pipe  & 0.133-0.144                 & 1450-1560                       
+CPVC Pipe  & 0.133-0.144                 & 1450-1560                       \\
 \end{tabular}
 \end{table}
 %
 \noindent
-Using these conduction values the heat transfer through the pipe can be calculated. Furthermore the heat transfer into the soil can also be calculated in a similar way. We look to find the conduction coefficient of the soil that that geothermal heat pump pipes will be buried in. This will vary from region to region as it is a function of multiple variables. As seen in the work done by Farouki \cite{farouki1981thermal} the thermal properties vary largely as a function of Quartz content, crushed or natural, coarse or fine, dry density, and degree of saturation. %
+Using these conduction values the heat transfer through the pipe can be calculated. Furthermore the heat transfer into the soil can also be calculated in a similar way. We look to find the conduction coefficient of the soil that that geothermal heat pump pipes will be buried in. This will vary from region to region as it is a function of multiple variables. As seen in the work done by Farouki \cite{farouki1981thermal} the thermal properties vary largely as a function of Quartz content, crushed or natural, coarse or fine, dry density, and degree of saturation. An example of average thermal properties can be seem below as measured by Oke in \cite{oke2002boundary}.
+%
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc}
+Type             & Thermal Conductivity (W/mK) & Density (kg/$m^3$) \\ \hline
+Sandy Soil (Dry) & 0.30                        & 1600               \\
+Sandy Soil (Wet) & 2.20                        & 2000               \\
+Clay Soil (Dry)  & 0.25                        & 1600               \\
+Clay Soil (Wet)  & 1.58                        & 2000              
+\end{tabular}
+\end{table}
+%
+\noindent
 \begin{equation}
     { R }_{ total }={ R }_{ inner }+{ R }_{ pipe }+{ R }_{ soil }=\frac { 1 }{ h{ A }_{ s } } +\frac { ln({ { r }_{ o } }/{ { r }_{ i } }) }{ { 2\pi Lk }_{ pipe } } +\frac { ln({ { r }_{ \infty  } }/{ { r }_{ o } }) }{ { 2\pi Lk }_{ soil } } 
 \end{equation}
