@@ -1,4 +1,4 @@
-function [Tout,Q] = calc_outlet(Q_flow, Tin, Tinf, d, t, L, N)
+function [Tout,Q,R_water,R_pipe,R_soil] = calc_outlet(Q_flow, Tin, Tinf, d, t, L, N)
 
 e = 0.0015e-3; % todo use the passed value
 
@@ -29,7 +29,10 @@ h = Nud*k_water/d;
 As = pi*d*L;
 Ac = 1/4*pi*d^2;
 % Calculate total resistance
-Rtot = 1/(As*h) + log(((d+2*t)/2)/(d/2))/(2*pi*L*k_pipe) + log(r_soil/((d+2*t)/2))/(2*pi*L*k_soil);
+R_water = 1/(As*h);
+R_pipe = log(((d+2*t)/2)/(d/2))/(2*pi*L*k_pipe);
+R_soil = log(r_soil/((d+2*t)/2))/(2*pi*L*k_soil);
+Rtot = R_water + R_pipe + R_soil;
 % Calculate our outlet temp
 Tout = -(Tinf - Tin)*exp(-1/(Q_flow*rho*cp*Rtot)) + Tinf;
 % Calc total energy transfered
