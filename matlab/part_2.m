@@ -3,14 +3,15 @@ close all
 clear
 
 
-Tin = 23; % degree c
+Tin = -3; % degree c
 Tinf = 12; % degree c
 %d = 0.0381; % meters (1.5 inch)
 d = 0.0254; % meters (1 inch)
 t = 0.0068834; % meters (thickness for 1.5 inch)
-L = 30; % meters
-N = [0:0.1:4.5];
+L = 60; % meters
 
+
+N = [0:0.1:4.5];
 vel = 0.5; % m/s
 Q_flow = vel.*1/4.*pi.*d^2; % m^3/s
 count = 1;

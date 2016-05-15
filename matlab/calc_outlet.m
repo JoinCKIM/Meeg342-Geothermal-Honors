@@ -7,6 +7,8 @@ rho = 998; % density kg/m^3
 cp = 4200; %J/kgK
 k_water = 0.58; %conduction of water (W/mK)
 k_pipe = 0.461; %conduction of pipe (W/mK)
+k_soil = 1.25; % conduction for 50% wetted sandy soil (W/mk)
+r_soil = 0.3048; % Assume that 1ft away the soil becomes constant temp (m)
 
 Pr = (cp*mu)/k_water; % Prandtl number
 ed = e/d;
@@ -27,7 +29,7 @@ h = Nud*k_water/d;
 As = pi*d*L;
 Ac = 1/4*pi*d^2;
 % Calculate total resistance
-Rtot = 1/(As*h) + log(((d+2*t)/2)/(d/2))/(2*pi*L*k_pipe);
+Rtot = 1/(As*h) + log(((d+2*t)/2)/(d/2))/(2*pi*L*k_pipe) + log(r_soil/((d+2*t)/2))/(2*pi*L*k_soil);
 % Calculate our outlet temp
 Tout = -(Tinf - Tin)*exp(-1/(Q_flow*rho*cp*Rtot)) + Tinf;
 % Calc total energy transfered

@@ -3,14 +3,14 @@ close all
 clear
 
 
-Tin = 23; % degree c
+Tin = -3; % degree c
 Tinf = 12; % degree c
 %d = 0.0381; % meters (1.5 inch)
 d = 0.0254; % meters (1 inch)
 t = 0.0068834; % meters (thickness for 1.5 inch)
-L = 30; % meters
+L = 60; % meters
 
-vel = [0:0.01:1]; % m/s
+vel = [0:0.01:0.8]; % m/s
 Q_flow = vel.*1/4.*pi.*d^2; % m^3/s
 count = 1;
 Touts = [];
@@ -33,6 +33,7 @@ end
 figure(1)
 plot(Q_flow,Touts, '-bs')
 hold on
+axis tight
 plot(Q_flow,Toutp, '-rs')
 legend('Series', 'Parallel')
 xlabel('Volumetric flow rate (m^3/s)')
@@ -42,6 +43,7 @@ ylabel(s)
 figure(2)
 plot(Q_flow,Engs, '-bs')
 hold on
+axis tight
 plot(Q_flow,Engp, '-rs')
 legend('Series', 'Parallel')
 xlabel('Volumetric flow rate (m^3/s)')
